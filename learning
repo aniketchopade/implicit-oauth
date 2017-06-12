@@ -1,0 +1,12 @@
+route object can be module.exported 
+then it can be require'd in server.js main file and app.use'd as specific route
+
+birds.js
+    var router = express.Router()
+    router.get('/', function (req, res) {
+    res.send('Birds home page')
+    })
+    module.exports = router
+
+var birds = require('./birds')
+app.use('/birds', birds)
